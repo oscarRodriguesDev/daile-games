@@ -21,8 +21,10 @@ export function FavoriteCards() {
           
 
             <FiX size={24} color="#fff" />
+        
             
           
         </div>
     )
+    //tentando alteração
 }
