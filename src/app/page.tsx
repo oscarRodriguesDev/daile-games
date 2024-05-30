@@ -6,23 +6,25 @@ import { BsArrowRightSquare } from 'react-icons/bs'
 import { Input } from '@/components/input'
 import { GameCard } from '@/components/cards'
 
+const apiUrl =  'https://sujeitoprogramador.com'
 
 //função para buscar treaer os games do bd
 async function getDalyGame() {
   try {
-    const response = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=game_day`, { next: { revalidate: 320 } })
+    const response = await fetch(`${apiUrl}/next-api/?api=game_day`, { next: { revalidate: 320 } })
     return response.json()
   } catch (erro) {
-    throw new Error('Failed to fetch data')
+    throw new Error('Failed to fetch data') 
   }
 }
 //função para buscar treaer os games do bd
 async function getGames() {
+
   try {
-    const response = await fetch(`${process.env.NEXT_API_URL}/next-api/?api=games`, { next: { revalidate: 320 } })
+    const response = await fetch(`${apiUrl}/next-api/?api=games`, { next: { revalidate: 320 } })
     return response.json()
   } catch (erro) {
-    throw new Error('Failed to fetch data')
+   throw new Error('Failed to fetch data') 
   }
 }
 
